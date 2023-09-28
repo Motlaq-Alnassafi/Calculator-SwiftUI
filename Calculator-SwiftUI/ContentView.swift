@@ -7,8 +7,15 @@
 
 import SwiftUI
 
+//must fix the issue where if we choose 3 for the first value and want to choose 33 for the second value it wont work
+
 struct ContentView: View {
+    
     @State var calculation: String = "0"
+    @State var operation: String = ""
+    @State var value1: String = ""
+    @State var value2: String = ""
+    
     var body: some View {
         VStack {
             HStack {
@@ -23,11 +30,20 @@ struct ContentView: View {
             HStack {
                 // 7-8-9-/
                 Button("7") {
-                    if calculation == "0" {
+                    if operation == "" {
+                        if calculation == "0"{
+                            calculation = "7"
+                        }
+                        else {
+                            calculation += "7"
+                        }
+                    }
+                    else if value1 == calculation {
                         calculation = "7"
                     }
                     else {
                         calculation += "7"
+                        
                     }
                 }
                 .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/,maxWidth: .infinity,
@@ -37,11 +53,20 @@ struct ContentView: View {
                 .cornerRadius(15)
                 .font(.system(size:50))
                 Button("8") {
-                    if calculation == "0" {
+                    if operation == "" {
+                        if calculation == "0"{
+                            calculation = "8"
+                        }
+                        else {
+                            calculation += "8"
+                        }
+                    }
+                    else if value1 == calculation {
                         calculation = "8"
                     }
                     else {
                         calculation += "8"
+                        
                     }
                 }
                 .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/,maxWidth: .infinity,
@@ -52,11 +77,20 @@ struct ContentView: View {
                 .cornerRadius(15)
                 .font(.system(size:50))
                 Button("9") {
-                    if calculation == "0" {
+                    if operation == "" {
+                        if calculation == "0"{
+                            calculation = "9"
+                        }
+                        else {
+                            calculation += "9"
+                        }
+                    }
+                    else if value1 == calculation {
                         calculation = "9"
                     }
                     else {
                         calculation += "9"
+                        
                     }
                 }
                 .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/,maxWidth: .infinity,
@@ -66,7 +100,8 @@ struct ContentView: View {
                 .cornerRadius(15)
                 .font(.system(size:50))
                 Button("/") {
-                    print("Hello")
+                    value1 = calculation
+                    operation = "Div"
                 }
                 .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/,maxWidth: .infinity,
                        minHeight: 0, maxHeight: .infinity)
@@ -82,11 +117,20 @@ struct ContentView: View {
             HStack {
                 //4-5-6-X
                 Button("4") {
-                    if calculation == "0" {
+                    if operation == "" {
+                        if calculation == "0"{
+                            calculation = "4"
+                        }
+                        else {
+                            calculation += "4"
+                        }
+                    }
+                    else if value1 == calculation {
                         calculation = "4"
                     }
                     else {
                         calculation += "4"
+                        
                     }
                 }
                 .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/,maxWidth: .infinity,
@@ -96,11 +140,20 @@ struct ContentView: View {
                 .cornerRadius(15)
                 .font(.system(size:50))
                 Button("5") {
-                    if calculation == "0" {
+                    if operation == "" {
+                        if calculation == "0"{
+                            calculation = "5"
+                        }
+                        else {
+                            calculation += "5"
+                        }
+                    }
+                    else if value1 == calculation {
                         calculation = "5"
                     }
                     else {
                         calculation += "5"
+                        
                     }
                 }
                 .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/,maxWidth: .infinity,
@@ -110,11 +163,20 @@ struct ContentView: View {
                 .cornerRadius(15)
                 .font(.system(size:50))
                 Button("6") {
-                    if calculation == "0" {
+                    if operation == "" {
+                        if calculation == "0"{
+                            calculation = "6"
+                        }
+                        else {
+                            calculation += "6"
+                        }
+                    }
+                    else if value1 == calculation {
                         calculation = "6"
                     }
                     else {
                         calculation += "6"
+                        
                     }
                 }
                 .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/,maxWidth: .infinity,
@@ -124,7 +186,9 @@ struct ContentView: View {
                 .cornerRadius(15)
                 .font(.system(size:50))
                 Button("X") {
-                    print("Hello")
+                    value1 = calculation
+                    operation = "Multi"
+                    
                 }
                 .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/,maxWidth: .infinity,
                        minHeight: 0, maxHeight: .infinity)
@@ -139,11 +203,20 @@ struct ContentView: View {
             HStack {
                 //1-2-3- -
                 Button("1") {
-                    if calculation == "0" {
+                    if operation == "" {
+                        if calculation == "0"{
+                            calculation = "1"
+                        }
+                        else {
+                            calculation += "1"
+                        }
+                    }
+                    else if value1 == calculation {
                         calculation = "1"
                     }
                     else {
                         calculation += "1"
+                        
                     }
                 }
                 .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/,maxWidth: .infinity,
@@ -153,11 +226,20 @@ struct ContentView: View {
                 .cornerRadius(15)
                 .font(.system(size:50))
                 Button("2") {
-                    if calculation == "0" {
+                    if operation == "" {
+                        if calculation == "0"{
+                            calculation = "2"
+                        }
+                        else {
+                            calculation += "2"
+                        }
+                    }
+                    else if value1 == calculation {
                         calculation = "2"
                     }
                     else {
                         calculation += "2"
+                        
                     }
                 }
                 .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/,maxWidth: .infinity,
@@ -167,11 +249,20 @@ struct ContentView: View {
                 .cornerRadius(15)
                 .font(.system(size:50))
                 Button("3") {
-                    if calculation == "0" {
+                    if operation == "" {
+                        if calculation == "0"{
+                            calculation = "3"
+                        }
+                        else {
+                            calculation += "3"
+                        }
+                    }
+                    else if value1 == calculation {
                         calculation = "3"
                     }
                     else {
                         calculation += "3"
+                        
                     }
                 }
                 .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/,maxWidth: .infinity,
@@ -181,7 +272,8 @@ struct ContentView: View {
                 .cornerRadius(15)
                 .font(.system(size:50))
                 Button("-") {
-                    print("Hello")
+                    value1 = calculation
+                    operation = "Sub"
                 }
                 .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/,maxWidth: .infinity,
                        minHeight: 0, maxHeight: .infinity)
@@ -196,11 +288,20 @@ struct ContentView: View {
             HStack {
                 //0-c-+-=
                 Button("0") {
-                    if calculation == "0" {
+                    if operation == "" {
+                        if calculation == "0"{
+                            calculation = "0"
+                        }
+                        else {
+                            calculation += "0"
+                        }
+                    }
+                    else if value1 == calculation {
                         calculation = "0"
                     }
                     else {
                         calculation += "0"
+                        
                     }
                 }
                 .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/,maxWidth: .infinity,
@@ -211,6 +312,7 @@ struct ContentView: View {
                 .font(.system(size:50))
                 Button("C") {
                     calculation = "0"
+                    value1 = ""
                 }
                 .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/,maxWidth: .infinity,
                        minHeight: 0, maxHeight: .infinity)
@@ -219,7 +321,8 @@ struct ContentView: View {
                 .cornerRadius(15)
                 .font(.system(size:50))
                 Button("+") {
-                    print("Hello")
+                    value1 = calculation
+                    operation = "Add"
                 }
                 .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/,maxWidth: .infinity,
                        minHeight: 0, maxHeight: .infinity)
@@ -228,7 +331,35 @@ struct ContentView: View {
                 .cornerRadius(15)
                 .font(.system(size:50))
                 Button("=") {
-                    print("Hello")
+                    var tValue1 = Int(value1) ?? 0
+                    var tValue2 = Int(calculation) ?? 0
+                    if operation == "Multi"
+                    {
+                        calculation = "\(tValue1 * tValue2)"
+                        operation = ""
+                    }
+                    else if operation == "Div" {
+                        if tValue2 != 0 {
+                            calculation = "\(tValue1 / tValue2)"
+                            operation = ""
+                        }
+                        else {
+                            calculation = "Error: Cant Divide by 0"
+                            operation = ""
+                            value1 = ""
+                        }
+                    }
+                    else if operation == "Sub" {
+                        calculation = "\(tValue1 - tValue2)"
+                        operation = ""
+                    }
+                    else if operation == "Add" {
+                        calculation = "\(tValue1 + tValue2)"
+                        operation = ""
+                    }
+                    else {
+                        calculation = "0"
+                    }
                 }
                 .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/,maxWidth: .infinity,
                        minHeight: 0, maxHeight: .infinity)
