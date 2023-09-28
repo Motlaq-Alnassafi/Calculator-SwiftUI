@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-//must fix the issue where if we choose 3 for the first value and want to choose 33 for the second value it wont work
+//must fix the issue where we divide by zero and the error message comes out and another number is selected it must remove the error message
 
 struct ContentView: View {
     
@@ -15,6 +15,7 @@ struct ContentView: View {
     @State var operation: String = ""
     @State var value1: String = ""
     @State var value2: String = ""
+    @State var counter: Int = 0
     
     var body: some View {
         VStack {
@@ -38,8 +39,9 @@ struct ContentView: View {
                             calculation += "7"
                         }
                     }
-                    else if value1 == calculation {
+                    else if value1 == calculation && counter == 0{
                         calculation = "7"
+                        counter = 1
                     }
                     else {
                         calculation += "7"
@@ -61,8 +63,9 @@ struct ContentView: View {
                             calculation += "8"
                         }
                     }
-                    else if value1 == calculation {
+                    else if value1 == calculation && counter == 0{
                         calculation = "8"
+                        counter = 1
                     }
                     else {
                         calculation += "8"
@@ -85,8 +88,9 @@ struct ContentView: View {
                             calculation += "9"
                         }
                     }
-                    else if value1 == calculation {
+                    else if value1 == calculation && counter == 0{
                         calculation = "9"
+                        counter = 1
                     }
                     else {
                         calculation += "9"
@@ -125,8 +129,9 @@ struct ContentView: View {
                             calculation += "4"
                         }
                     }
-                    else if value1 == calculation {
+                    else if value1 == calculation && counter == 0{
                         calculation = "4"
+                        counter = 1
                     }
                     else {
                         calculation += "4"
@@ -148,8 +153,9 @@ struct ContentView: View {
                             calculation += "5"
                         }
                     }
-                    else if value1 == calculation {
+                    else if value1 == calculation && counter == 0{
                         calculation = "5"
+                        counter = 1
                     }
                     else {
                         calculation += "5"
@@ -171,8 +177,9 @@ struct ContentView: View {
                             calculation += "6"
                         }
                     }
-                    else if value1 == calculation {
+                    else if value1 == calculation && counter == 0{
                         calculation = "6"
+                        counter = 1
                     }
                     else {
                         calculation += "6"
@@ -211,8 +218,9 @@ struct ContentView: View {
                             calculation += "1"
                         }
                     }
-                    else if value1 == calculation {
+                    else if value1 == calculation && counter == 0{
                         calculation = "1"
+                        counter = 1
                     }
                     else {
                         calculation += "1"
@@ -234,8 +242,9 @@ struct ContentView: View {
                             calculation += "2"
                         }
                     }
-                    else if value1 == calculation {
+                    else if value1 == calculation && counter == 0{
                         calculation = "2"
+                        counter = 1
                     }
                     else {
                         calculation += "2"
@@ -257,8 +266,9 @@ struct ContentView: View {
                             calculation += "3"
                         }
                     }
-                    else if value1 == calculation {
+                    else if value1 == calculation && counter == 0{
                         calculation = "3"
+                        counter = 1
                     }
                     else {
                         calculation += "3"
@@ -296,8 +306,9 @@ struct ContentView: View {
                             calculation += "0"
                         }
                     }
-                    else if value1 == calculation {
+                    else if value1 == calculation && counter == 0{
                         calculation = "0"
+                        counter = 1
                     }
                     else {
                         calculation += "0"
@@ -331,31 +342,36 @@ struct ContentView: View {
                 .cornerRadius(15)
                 .font(.system(size:50))
                 Button("=") {
-                    var tValue1 = Int(value1) ?? 0
-                    var tValue2 = Int(calculation) ?? 0
+                    let tValue1 = Int(value1) ?? 0
+                    let tValue2 = Int(calculation) ?? 0
                     if operation == "Multi"
                     {
                         calculation = "\(tValue1 * tValue2)"
                         operation = ""
+                        counter = 0
                     }
                     else if operation == "Div" {
                         if tValue2 != 0 {
                             calculation = "\(tValue1 / tValue2)"
                             operation = ""
+                            counter = 0
                         }
                         else {
                             calculation = "Error: Cant Divide by 0"
                             operation = ""
                             value1 = ""
+                            counter = 0
                         }
                     }
                     else if operation == "Sub" {
                         calculation = "\(tValue1 - tValue2)"
                         operation = ""
+                        counter = 0
                     }
                     else if operation == "Add" {
                         calculation = "\(tValue1 + tValue2)"
                         operation = ""
+                        counter = 0
                     }
                     else {
                         calculation = "0"
