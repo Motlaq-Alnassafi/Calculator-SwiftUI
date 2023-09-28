@@ -11,6 +11,7 @@
 		02455B592AC42CCA008A18A5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02455B582AC42CCA008A18A5 /* ContentView.swift */; };
 		02455B5B2AC42CCB008A18A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02455B5A2AC42CCB008A18A5 /* Assets.xcassets */; };
 		02455B5E2AC42CCB008A18A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02455B5D2AC42CCB008A18A5 /* Preview Assets.xcassets */; };
+		02455B652AC449CA008A18A5 /* ButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02455B642AC449CA008A18A5 /* ButtonLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		02455B582AC42CCA008A18A5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		02455B5A2AC42CCB008A18A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02455B5D2AC42CCB008A18A5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		02455B642AC449CA008A18A5 /* ButtonLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				02455B562AC42CCA008A18A5 /* Calculator_SwiftUIApp.swift */,
 				02455B582AC42CCA008A18A5 /* ContentView.swift */,
+				02455B642AC449CA008A18A5 /* ButtonLayout.swift */,
 				02455B5A2AC42CCB008A18A5 /* Assets.xcassets */,
 				02455B5C2AC42CCB008A18A5 /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02455B652AC449CA008A18A5 /* ButtonLayout.swift in Sources */,
 				02455B592AC42CCA008A18A5 /* ContentView.swift in Sources */,
 				02455B572AC42CCA008A18A5 /* Calculator_SwiftUIApp.swift in Sources */,
 			);
